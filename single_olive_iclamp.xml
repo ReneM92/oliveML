@@ -46,6 +46,7 @@
         <OutputColumn id="v" quantity="pop/0/cell/1/v"/>
         <OutputColumn id="v" quantity="pop/0/cell/2/v"/>
         <OutputColumn id="v" quantity="pop/0/cell/1/caConc"/>
+        
       <!--
       <OutputColumn id="hna_soma" quantity="pop/0/cell/biophys/membraneProperties/na_s_soma/na_s/h/q"/>
       <OutputColumn id="nk" quantity="pop/0/cell/biophys/membraneProperties/k_soma/k/n/q"/>
@@ -60,6 +61,76 @@
       <OutputColumn id="ncah" quantity="pop/0/cell/biophys/membraneProperties/k_axon/k/n/q"/>
       -->
     </OutputFile>
+    
+    <OutputFile id="outf_dendrite" fileName="test_dendrite.dat">
+        <OutputColumn id="k_dend" quantity="pop/0/cell/1/biophys/membraneProperties/cal_dend/cal/k/q"/>
+        <OutputColumn id="l_dend" quantity="pop/0/cell/1/biophys/membraneProperties/cal_dend/cal/l/q"/>
+        <OutputColumn id="r_dend" quantity="pop/0/cell/1/biophys/membraneProperties/cah_dend/cah/r/q"/>
+        <OutputColumn id="z_dend" quantity="pop/0/cell/1/biophys/membraneProperties/kca_dend/kca/z/q"/>
+        <OutputColumn id="n_dend" quantity="pop/0/cell/1/biophys/membraneProperties/h_dend/h/n/q"/>
+    </OutputFile>
+
+    <OutputFile id="outf_soma" fileName="test_soma.dat">
+        <OutputColumn id="m_soma" quantity="pop/0/cell/0/biophys/membraneProperties/na_s_soma/na_s/m/q"/>
+        <OutputColumn id="h_soma" quantity="pop/0/cell/0/biophys/membraneProperties/na_s_soma/na_s/h/q"/>
+        <OutputColumn id="n_soma" quantity="pop/0/cell/0/biophys/membraneProperties/kdr_soma/kdr/n/q"/>
+        <OutputColumn id="nk_soma" quantity="pop/0/cell/0/biophys/membraneProperties/k_soma/k/n/q"/>
+    </OutputFile>
+
+    <OutputFile id="outf_axon" fileName="test_axon.dat">
+        <OutputColumn id="m_axon" quantity="pop/0/cell/2/biophys/membraneProperties/na_axon/na_a/m/q"/>
+        <OutputColumn id="h_axon" quantity="pop/0/cell/2/biophys/membraneProperties/na_axon/na_a/h/q"/>
+        <OutputColumn id="nk_axon" quantity="pop/0/cell/2/biophys/membraneProperties/k_axon/k/n/q"/>
+    </OutputFile>
+
+    <OutputFile id="tau_dendrite" fileName="tau_dendrite.dat">
+        <OutputColumn id="tau_k_dend" quantity="pop/0/cell/1/biophys/membraneProperties/cal_dend/cal/k/tau"/>
+        <OutputColumn id="tau_l_dend" quantity="pop/0/cell/1/biophys/membraneProperties/cal_dend/cal/l/tau"/>
+        <OutputColumn id="tau_r_dend" quantity="pop/0/cell/1/biophys/membraneProperties/cah_dend/cah/r/tau"/>
+        <OutputColumn id="tau_z_dend" quantity="pop/0/cell/1/biophys/membraneProperties/kca_dend/kca/z/tau"/>
+        <OutputColumn id="tau_n_dend" quantity="pop/0/cell/1/biophys/membraneProperties/h_dend/h/n/tau"/>
+    </OutputFile>
+
+    <OutputFile id="tau_soma" fileName="tau_soma.dat">
+        <OutputColumn id="tau_h_soma" quantity="pop/0/cell/0/biophys/membraneProperties/na_s_soma/na_s/h/tau"/>
+        <OutputColumn id="tau_n_soma" quantity="pop/0/cell/0/biophys/membraneProperties/kdr_soma/kdr/n/tau"/>
+        <OutputColumn id="tau_nk_soma" quantity="pop/0/cell/0/biophys/membraneProperties/k_soma/k/n/tau"/>
+    </OutputFile>
+
+    <OutputFile id="tau_axon" fileName="tau_axon.dat">
+        <OutputColumn id="h_axon" quantity="pop/0/cell/2/biophys/membraneProperties/na_axon/na_a/h/tau"/>
+        <OutputColumn id="nk_axon" quantity="pop/0/cell/2/biophys/membraneProperties/k_axon/k/n/tau"/>
+    </OutputFile>
+
+    <OutputFile id="i_dendrite" fileName="i_dendrite.dat">
+        <OutputColumn id="iCal_dend" quantity="pop/0/cell/1/biophys/membraneProperties/cal_dend/iDensity"/>
+        <OutputColumn id="iCah_dend" quantity="pop/0/cell/1/biophys/membraneProperties/cah_dend/iDensity"/>
+        <OutputColumn id="iKca_dend" quantity="pop/0/cell/1/biophys/membraneProperties/kca_dend/iDensity"/>
+        <OutputColumn id="iH_dend" quantity="pop/0/cell/1/biophys/membraneProperties/h_dend/iDensity"/>
+        <OutputColumn id="iLeak_dend" quantity="pop/0/cell/1/biophys/membraneProperties/leak_all/iDensity"/>
+    </OutputFile>
+
+    <OutputFile id="i_soma" fileName="i_soma.dat">
+        <OutputColumn id="iNa_soma" quantity="pop/0/cell/0/biophys/membraneProperties/na_s_soma/iDensity"/>
+        <OutputColumn id="iKdr_soma" quantity="pop/0/cell/0/biophys/membraneProperties/kdr_soma/iDensity"/>
+        <OutputColumn id="iK_soma" quantity="pop/0/cell/0/biophys/membraneProperties/k_soma/iDensity"/>
+        <OutputColumn id="iLeak_soma" quantity="pop/0/cell/0/biophys/membraneProperties/leak_all/iDensity"/>
+    </OutputFile>
+
+    <OutputFile id="i_axon" fileName="i_axon.dat">
+        <OutputColumn id="iNa_axon" quantity="pop/0/cell/2/biophys/membraneProperties/na_axon/iDensity"/>
+        <OutputColumn id="iK_axon" quantity="pop/0/cell/2/biophys/membraneProperties/k_axon/iDensity"/>
+        <OutputColumn id="iLeak_axon" quantity="pop/0/cell/2/biophys/membraneProperties/leak_all/iDensity"/>
+    </OutputFile>
+    
+    <!--
+    <OutputFile id="surface" fileName="surface.dat">
+        <OutputColumn id="surface_dend" quantity="pop/0/cell/1/morphology/surfaceArea"/>
+        <OutputColumn id="surface_axon" quantity="pop/0/cell/2/morphology/surfaceArea"/>
+        <OutputColumn id="surface_soma" quantity="pop/0/cell/0/morphology/surfaceArea"/>
+    </OutputFile>
+  -->
+
 
   </Component>
 
